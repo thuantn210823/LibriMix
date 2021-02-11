@@ -77,7 +77,7 @@ for n_src in 2; do
     --metadata_dir $metadata_dir \
     --librimix_outdir $librimix_outdir \
     --n_src $n_src \
-    --freqs 8k 16k \
-    --modes min max \
-    --types mix_clean mix_both mix_single
+    --freqs 16k \
+    --modes max \
+    --types mix_clean mix_both
 done
