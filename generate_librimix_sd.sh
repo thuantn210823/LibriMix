@@ -59,7 +59,6 @@ function wham() {
 LibriSpeech_dev_clean &
 LibriSpeech_test_clean &
 LibriSpeech_clean100 &
-LibriSpeech_clean360 &
 wham &
 
 wait
@@ -79,5 +78,5 @@ for n_src in 2; do
     --n_src $n_src \
     --freqs 16k \
     --modes max \
-    --types mix_clean mix_both
+    --types mix_both
 done

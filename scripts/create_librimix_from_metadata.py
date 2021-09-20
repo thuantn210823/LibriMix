@@ -63,8 +63,10 @@ def create_librimix(librispeech_dir, wham_dir, out_dir, metadata_dir,
                     freqs, n_src, modes, types):
     """ Generate sources mixtures and saves them in out_dir"""
     # Get metadata files
+    print("[Warning] - train-clean-360 is ignored in create_librimix_from_metadata.py for less data preparation time."\
+        " Please note that in S3PRL we only use the train-clean-100 for downstream tasks.")
     md_filename_list = [file for file in os.listdir(metadata_dir)
-                        if 'info' not in file]
+                        if 'info' not in file and '360' not in file]
     # Create all parts of librimix
     for md_filename in md_filename_list:
         csv_path = os.path.join(metadata_dir, md_filename)
