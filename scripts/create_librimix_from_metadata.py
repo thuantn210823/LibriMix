@@ -104,11 +104,7 @@ def process_metadata_file(csv_path, freqs, n_src, librispeech_dir, wham_dir,
             print(f"Creating mixtures and sources from {csv_path} "
                   f"in {dir_path}")
             # Create subdir
-            if types == ['mix_clean']:
-                subdirs = [f's{i + 1}' for i in range(n_src)] + ['mix_clean']
-            else:
-                subdirs = [f's{i + 1}' for i in range(n_src)] + types + [
-                    'noise']
+            subdirs = [f's{i + 1}' for i in range(n_src)] + types + ['noise']
             # Create directories accordingly
             for subdir in subdirs:
                 os.makedirs(os.path.join(dir_path, subdir))
