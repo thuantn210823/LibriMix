@@ -1,6 +1,7 @@
 import os
 import re
 import argparse
+from pathlib import Path
 
 
 def float2str(number, size=6):
@@ -34,7 +35,7 @@ def load_rttm_text(path):
     return data, spk_dict
 
 
-def process_metadata(metadata, target_dir, source_rttm):
+def process_metadata(metadata, target_dir, source_rttm, libri2mix):
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
 
@@ -54,6 +55,9 @@ def process_metadata(metadata, target_dir, source_rttm):
             mix_id, mix_path, _, _, _, length = line.strip().split(",")
             # from 3536-8226-0026_1673-143397-0009
             # to 3536-8226-0026, 1673-143397-0009
+
+            relpath = re.search(f".*Libri2Mix{os.path.sep}(.+)", mix_path).groups()[0]
+            mix_path = os.path.join(libri2mix, str(relpath))
             source1_id, source2_id = mix_id.split("_")
             spk1, spk2 = source1_id.split("-")[0], source2_id.split("-")[0]
             reco1, reco2 = source1_id[len(spk1) + 1:], source2_id[len(spk2) + 1:]
@@ -101,9 +105,10 @@ train_rttm, train_spk = load_rttm_text(os.path.join(args.rttm_dir, "train_clean_
 dev_rttm, dev_spk = load_rttm_text(os.path.join(args.rttm_dir, "dev_clean.rttm"))
 test_rttm, test_spk = load_rttm_text(os.path.join(args.rttm_dir, "test_clean.rttm"))
 
-process_metadata(os.path.join(args.source_dir, "mixture_train-100_mix_both.csv"), os.path.join(args.target_dir, "train"), train_rttm)
-process_metadata(os.path.join(args.source_dir, "mixture_dev_mix_both.csv"), os.path.join(args.target_dir, "dev"), dev_rttm)
-process_metadata(os.path.join(args.source_dir, "mixture_test_mix_both.csv"), os.path.join(args.target_dir, "test"), test_rttm)
+libri2mix = re.search(f"(.+Libri2Mix)", args.source_dir).groups()[0]
+process_metadata(os.path.join(args.source_dir, "mixture_train-100_mix_both.csv"), os.path.join(args.target_dir, "train"), train_rttm, libri2mix)
+process_metadata(os.path.join(args.source_dir, "mixture_dev_mix_both.csv"), os.path.join(args.target_dir, "dev"), dev_rttm, libri2mix)
+process_metadata(os.path.join(args.source_dir, "mixture_test_mix_both.csv"), os.path.join(args.target_dir, "test"), test_rttm, libri2mix)
 
 print("Successfully finish Kaldi-style preparation")
 
