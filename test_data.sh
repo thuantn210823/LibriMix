@@ -24,7 +24,7 @@ log "Data preparation started"
 pip install -q -r ./requirements.txt || true
 
 # Download and Generate Libri2Mix and Libri3Mix
-./test_generate_librimix_sd.sh $storage_dir $librispeech_dir
+bash ./test_generate_librimix_sd.sh $storage_dir $librispeech_dir
 
 # Get Diarization Annotation
 rttm_dir=./metadata/LibriSpeech  # Fixed assignment
