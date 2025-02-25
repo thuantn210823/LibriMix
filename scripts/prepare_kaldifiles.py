@@ -339,14 +339,14 @@ test_rttm, test_spk = load_rttm_text(os.path.join(args.rttm_dir, "test_clean.rtt
 
 process_metadata(
     os.path.join(args.source_dir, "mixture_train-100_mix_both.csv"),
-    os.path.join(args.target_dir, "train" + str(args.num_spk) + mode),
+    os.path.join(args.target_dir, "train-100" + str(args.num_spk) + mode),
     train_rttm100,
     args.fs,
     args.num_spk,
 )
 process_metadata(
     os.path.join(args.source_dir, "mixture_train-360_mix_both.csv"),
-    os.path.join(args.target_dir, "train" + str(args.num_spk) + mode),
+    os.path.join(args.target_dir, "train-360" + str(args.num_spk) + mode),
     train_rttm360,
     args.fs,
     args.num_spk,
