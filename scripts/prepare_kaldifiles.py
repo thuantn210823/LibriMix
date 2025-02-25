@@ -326,29 +326,41 @@ parser.add_argument("--num_spk", type=int, default=2)
 
 args = parser.parse_args()
 
-train_rttm, train_spk = load_rttm_text(
+mode = os.path.basename(os.path.dirname(args.source_dir))
+
+train_rttm100, train_spk100 = load_rttm_text(
     os.path.join(args.rttm_dir, "train_clean_100.rttm")
+)
+train_rttm360, train_spk360 = load_rttm_text(
+    os.path.join(args.rttm_dir, "train_clean_360.rttm")
 )
 dev_rttm, dev_spk = load_rttm_text(os.path.join(args.rttm_dir, "dev_clean.rttm"))
 test_rttm, test_spk = load_rttm_text(os.path.join(args.rttm_dir, "test_clean.rttm"))
 
 process_metadata(
     os.path.join(args.source_dir, "mixture_train-100_mix_both.csv"),
-    os.path.join(args.target_dir, "train" + str(args.num_spk)),
-    train_rttm,
+    os.path.join(args.target_dir, "train" + str(args.num_spk) + mode),
+    train_rttm100,
+    args.fs,
+    args.num_spk,
+)
+process_metadata(
+    os.path.join(args.source_dir, "mixture_train-360_mix_both.csv"),
+    os.path.join(args.target_dir, "train" + str(args.num_spk) + mode),
+    train_rttm360,
     args.fs,
     args.num_spk,
 )
 process_metadata(
     os.path.join(args.source_dir, "mixture_dev_mix_both.csv"),
-    os.path.join(args.target_dir, "dev" + str(args.num_spk)),
+    os.path.join(args.target_dir, "dev" + str(args.num_spk) + mode),
     dev_rttm,
     args.fs,
     args.num_spk,
 )
 process_metadata(
     os.path.join(args.source_dir, "mixture_test_mix_both.csv"),
-    os.path.join(args.target_dir, "test" + str(args.num_spk)),
+    os.path.join(args.target_dir, "test" + str(args.num_spk) + mode),
     test_rttm,
     args.fs,
     args.num_spk,
