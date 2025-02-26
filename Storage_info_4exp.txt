@@ -1,0 +1,68 @@
+4.3G	Libri3Mix/wav16k/max/train-100/s2
+4.3G	Libri3Mix/wav16k/max/train-100/mix_single
+4.3G	Libri3Mix/wav16k/max/train-100/mix_clean
+4.3G	Libri3Mix/wav16k/max/train-100/s3
+4.3G	Libri3Mix/wav16k/max/train-100/s1
+4.3G	Libri3Mix/wav16k/max/train-100/mix_both
+4.3G	Libri3Mix/wav16k/max/train-100/noise
+30G	Libri3Mix/wav16k/max/train-100
+
+94M	Libri3Mix/wav16k/max/metadata
+
+831M	Libri3Mix/wav16k/max/test/s2
+831M	Libri3Mix/wav16k/max/test/mix_single
+831M	Libri3Mix/wav16k/max/test/mix_clean
+831M	Libri3Mix/wav16k/max/test/s3
+831M	Libri3Mix/wav16k/max/test/s1
+831M	Libri3Mix/wav16k/max/test/mix_both
+831M	Libri3Mix/wav16k/max/test/noise
+5.7G	Libri3Mix/wav16k/max/test
+
+36G	Libri3Mix/wav16k/max
+
+94M	Libri3Mix/wav16k/min/metadata
+
+406M	Libri3Mix/wav16k/min/test/s2
+406M	Libri3Mix/wav16k/min/test/mix_single
+406M	Libri3Mix/wav16k/min/test/mix_clean
+406M	Libri3Mix/wav16k/min/test/s3
+406M	Libri3Mix/wav16k/min/test/s1
+406M	Libri3Mix/wav16k/min/test/mix_both
+406M	Libri3Mix/wav16k/min/test/noise
+2.8G	Libri3Mix/wav16k/min/test
+
+39G Libri3Mix/wav16k
+
+6.1G	Libri2Mix/wav16k/max/train-100/s2
+6.1G	Libri2Mix/wav16k/max/train-100/mix_single
+6.1G	Libri2Mix/wav16k/max/train-100/mix_clean
+6.1G	Libri2Mix/wav16k/max/train-100/s1
+6.1G	Libri2Mix/wav16k/max/train-100/mix_both
+6.1G	Libri2Mix/wav16k/max/train-100/noise
+37G	Libri2Mix/wav16k/max/train-100
+
+99M	Libri2Mix/wav16k/max/metadata
+
+777M	Libri2Mix/wav16k/max/test/s2
+777M	Libri2Mix/wav16k/max/test/mix_single
+777M	Libri2Mix/wav16k/max/test/mix_clean
+777M	Libri2Mix/wav16k/max/test/s1
+777M	Libri2Mix/wav16k/max/test/mix_both
+777M	Libri2Mix/wav16k/max/test/noise
+4.6G	Libri2Mix/wav16k/max/test
+
+42G Libri2Mix/wav16k/max
+
+99M	Libri2Mix/wav16k/min/metadata
+
+467M	Libri2Mix/wav16k/min/test/s2
+467M	Libri2Mix/wav16k/min/test/mix_single
+467M	Libri2Mix/wav16k/min/test/mix_clean
+467M	Libri2Mix/wav16k/min/test/s1
+467M	Libri2Mix/wav16k/min/test/mix_both
+467M	Libri2Mix/wav16k/min/test/noise
+2.8G	Libri2Mix/wav16k/min/test
+
+45G Libri2Mix/wav16k
+
+84G Libri2Mix + Libri3Mix
