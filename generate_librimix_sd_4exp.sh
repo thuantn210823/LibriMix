@@ -66,8 +66,8 @@ wait
 # Path to python
 python_path=python
 
-# If you wish to rerun this script in the future please comment this line out.
-$python_path scripts/augment_train_noise.py --wham_dir $wham_dir
+# This line is only need when use train-360.
+# $python_path scripts/augment_train_noise.py --wham_dir $wham_dir
 
 for n_src in 2 3; do
   metadata_dir=metadata/Libri$n_src"Mix"
