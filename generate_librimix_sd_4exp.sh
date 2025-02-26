@@ -56,8 +56,9 @@ function wham() {
 	fi
 }
 
-LibriSpeech_dev_clean &
+# For experiment we only need Libri2Mix, Libri3Mix train and test
 LibriSpeech_test_clean &
+LibriSpeech_clean100 &
 wham &
 
 wait
@@ -70,7 +71,7 @@ $python_path scripts/augment_train_noise.py --wham_dir $wham_dir
 
 for n_src in 2 3; do
   metadata_dir=metadata/Libri$n_src"Mix"
-  $python_path scripts/test_create_librimix_from_metadata.py --librispeech_dir $librispeech_dir \
+  $python_path scripts/create_librimix_from_metadata_4exp.py --librispeech_dir $librispeech_dir \
     --wham_dir $wham_dir \
     --metadata_dir $metadata_dir \
     --librimix_outdir $librimix_outdir \

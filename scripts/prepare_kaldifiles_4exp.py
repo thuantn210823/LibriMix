@@ -338,13 +338,14 @@ process_metadata(
 )
 
 if mode == 'max':
-    dev_rttm, dev_spk = load_rttm_text(os.path.join(args.rttm_dir, "dev_clean.rttm"))
-
+    train_rttm100, train_spk100 = load_rttm_text(
+        os.path.join(args.rttm_dir, "train_clean_100.rttm")
+    )
 
     process_metadata(
-        os.path.join(args.source_dir, "mixture_dev_mix_both.csv"),
-        os.path.join(args.target_dir, "dev" + str(args.num_spk) + mode),
-        dev_rttm,
+        os.path.join(args.source_dir, "mixture_train-100_mix_both.csv"),
+        os.path.join(args.target_dir, "train-100" + str(args.num_spk) + mode),
+        train_rttm100,
         args.fs,
         args.num_spk,
     )

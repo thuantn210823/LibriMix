@@ -72,7 +72,7 @@ def create_librimix(librispeech_dir, wham_dir, out_dir, metadata_dir,
     process_metadata_file(csv_path, freqs, n_src, librispeech_dir,
                               wham_dir, out_dir, modes, types)
     # Training set is max mode
-    csv_path = os.path.join(metadata_dir, f"libri{n_src}mix_dev-clean.csv")
+    csv_path = os.path.join(metadata_dir, f"libri{n_src}mix_train-clean-100.csv")
     process_metadata_file(csv_path, freqs, n_src, librispeech_dir,
                               wham_dir, out_dir, ['max'], types)
 
